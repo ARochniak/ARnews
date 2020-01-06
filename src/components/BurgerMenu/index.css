@@ -1,0 +1,58 @@
+.burger-menu {
+  border-radius: 24px;
+
+  transition: background-color 0.3s;
+}
+
+.burger-menu__translate {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  padding: 15px 0;
+  box-sizing: border-box;
+
+  transition: transform 0.2s linear;
+}
+
+.burger-menu:hover {
+  background-color: #ebebeb;
+
+  cursor: pointer;
+}
+
+.burger-menu span {
+  position: relative;
+
+  width: 24px;
+  border-bottom: 2px solid #5f6368;
+  border-radius: 1px;
+
+  transition: all 0.2s linear;
+}
+
+.burger-menu span:first-child {
+  transform-origin: left top;
+}
+
+.burger-menu span:last-child {
+  transform-origin: left bottom;
+}
+
+.burger-menu_close .burger-menu__translate {
+  transform: translateX(4px);
+}
+
+.burger-menu_close span:first-child {
+  transform: rotate(45deg);
+}
+
+.burger-menu_close span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger-menu_close span:last-child {
+  transform: rotate(-45deg);
+}

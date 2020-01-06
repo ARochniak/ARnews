@@ -1,0 +1,39 @@
+.aside {
+  width: 100%;
+  padding-top: 8px;
+  overflow: hidden;
+
+  background-color: white;
+
+  transition: all 0.2s ease-in;
+}
+
+.aside_hide {
+  width: 0;
+  opacity: 0;
+}
+
+.aside__news-type {
+  padding: 8px 16px;
+}
+
+.aside__news-type a {
+  font-size: 1.5em;
+  color: #464c51;
+  text-decoration: none;
+}
+
+.aside__news-type a:hover {
+  color: steelblue;
+}
+
+@media (max-width: 767px) {
+  .aside {
+    position: absolute;
+    width: 50%;
+  }
+
+  .aside_hide {
+    width: 0;
+  }
+}

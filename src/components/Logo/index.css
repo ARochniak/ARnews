@@ -1,0 +1,19 @@
+.logo {
+  margin: 0;
+  padding: 8px;
+
+  font-size: 3em;
+  color: white;
+
+  background-color: steelblue;
+}
+
+.logo span {
+  line-height: 1;
+}
+
+.logo__news {
+  color: steelblue;
+
+  background-color: white;
+}

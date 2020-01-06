@@ -1,0 +1,28 @@
+.news {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  padding: 8px;
+
+  border: 1px solid steelblue;
+  border-radius: 4px;
+}
+
+.news:hover {
+  box-shadow: 0 1px 6px 0 rgba(70, 130, 180, 0.28);
+}
+
+.news__content__title {
+  margin: 0;
+}
+
+.news__img {
+  width: 100px;
+  height: 100px;
+}
+
+.news__img img {
+  object-fit: cover;
+
+  border-radius: 4px;
+}
