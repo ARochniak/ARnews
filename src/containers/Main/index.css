@@ -1,9 +1,9 @@
 .main {
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
   height: 100%;
   padding: 16px;
-  box-sizing: border-box;
   overflow: scroll;
   overflow-x: hidden;
 }

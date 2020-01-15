@@ -1,36 +1,49 @@
 .aside {
-  width: 100%;
-  padding-top: 8px;
-  overflow: hidden;
+  position: relative;
 
-  background-color: white;
+  width: 100%;
 
   transition: all 0.2s ease-in;
 }
 
 .aside_hide {
   width: 0;
+
   opacity: 0;
 }
 
-.aside__news-type {
+.list {
+  padding: 8px 0 0;
+
+  list-style: none;
+  background-color: white;
+}
+
+.list__news-type {
   padding: 8px 16px;
 }
 
-.aside__news-type a {
-  font-size: 1.5em;
+.list__news-type button {
   color: #464c51;
-  text-decoration: none;
+  font-size: 1.5em;
+
+  background-color: transparent;
+  border: none;
+
+  transition: color 250ms linear;
 }
 
-.aside__news-type a:hover {
+.list__news-type button:hover {
   color: steelblue;
+
+  cursor: pointer;
 }
 
 @media (max-width: 767px) {
-  .aside {
+  .list {
     position: absolute;
-    width: 50%;
+
+    margin-top: 0;
   }
 
   .aside_hide {

@@ -1,17 +1,18 @@
 import React from 'react';
+import BurgerMenu from '../../components/BurgerMenu';
 import Logo from '../../components/Logo';
 
 import './index.css';
 
 // empty div for flex layout
 
-const Header = ({ burgerMenu }) => {
+const Header = ({ aside, className }) => {
   return (
-    <div className="header">
-      {burgerMenu}
+    <header className={`${className} header`}>
+      <BurgerMenu aside={aside} />
       <Logo />
       <div />
-    </div>
+    </header>
   );
 };
 

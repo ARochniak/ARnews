@@ -6,13 +6,15 @@
 
   border: 1px solid steelblue;
   border-radius: 4px;
+
+  transition: box-shadow 250ms linear;
 }
 
 .news:hover {
   box-shadow: 0 1px 6px 0 rgba(70, 130, 180, 0.28);
 }
 
-.news__content__title {
+.news__content-title {
   margin: 0;
 }
 

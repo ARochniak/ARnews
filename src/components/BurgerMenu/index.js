@@ -3,21 +3,21 @@ import React from 'react';
 import './index.css';
 
 function BurgerMenu({ aside }) {
-  const { hideAside, toggleAside } = aside;
+  const { isAsideHide, toggleAside } = aside;
   const clickHandler = () => {
-    toggleAside(!hideAside);
+    toggleAside(!isAsideHide);
   };
   const onKeyHandler = e => {
-    if (e.keyCode === 13) toggleAside(!hideAside);
+    if (e.keyCode === 'Enter') toggleAside(!isAsideHide);
   };
-  const className = `burger-menu${hideAside ? '' : ' burger-menu_close'}`;
+  const className = `burger-menu${isAsideHide ? '' : ' burger-menu_close'}`;
 
   return (
-    <div
+    <button
       className={className}
       onClick={clickHandler}
       onKeyDown={onKeyHandler}
-      role="button"
+      type="button"
       tabIndex={0}
     >
       <div className="burger-menu__translate">
@@ -25,7 +25,7 @@ function BurgerMenu({ aside }) {
         <span />
         <span />
       </div>
-    </div>
+    </button>
   );
 }
 

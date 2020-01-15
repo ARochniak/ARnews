@@ -1,5 +1,11 @@
 .burger-menu {
+  padding: 0;
+
+  background-color: white;
+
+  border: none;
   border-radius: 24px;
+  outline: none;
 
   transition: background-color 0.3s;
 }
@@ -7,12 +13,12 @@
 .burger-menu__translate {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
   width: 48px;
   height: 48px;
   padding: 15px 0;
-  box-sizing: border-box;
 
   transition: transform 0.2s linear;
 }
@@ -23,10 +29,15 @@
   cursor: pointer;
 }
 
+.burger-menu:focus {
+  background-color: #ebebeb;
+}
+
 .burger-menu span {
   position: relative;
 
   width: 24px;
+
   border-bottom: 2px solid #5f6368;
   border-radius: 1px;
 
