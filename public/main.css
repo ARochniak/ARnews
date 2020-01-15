@@ -163,6 +163,14 @@
   cursor: pointer;
 }
 
+.loading {
+  margin: 0;
+  padding: 6px;
+
+  color: #464c51;
+  font-size: 1.2em;
+}
+
 .aside {
   position: relative;
 
@@ -183,7 +191,8 @@
   top: 56px;
 
   margin: 0;
-  padding: 8px 0 0;
+  padding-top: 8px;
+  padding-left: 0;
 
   list-style: none;
   background-color: white;
@@ -211,9 +220,7 @@
 
 @media (max-width: 767px) {
   .list {
-    position: absolute;
-
-    margin-top: 0;
+    position: fixed;
   }
 
   .aside_hide {
