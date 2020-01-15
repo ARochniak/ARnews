@@ -22,7 +22,7 @@ export const setNews = category => {
 export const addNews = () => {
   return (dispatch, getState) => {
     const count = getState().count + 10;
-    fetchNews(getState().activeCategory, count).then(res => {
+    fetchNews(getState().activeNews, count).then(res => {
       const newsArray = res.map((newsItem, i) => ({
         id: i,
         name: newsItem.name,
