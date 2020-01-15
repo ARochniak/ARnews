@@ -1,34 +1,33 @@
 import React, { useEffect, useState } from 'react';
-import NewsItem from '../../components/NewsItem';
+import { connect } from 'react-redux';
+import setNews from '../../store/thunk';
+import News from '../../components/News';
 
 import './index.css';
 
-const Main = () => {
-  const [loaded, setLoaded] = useState(false);
+const Main = ({ className, news, dispatch }) => {
   useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch(
-        'https://api.cognitive.microsoft.com/bing/v7.0/news/search?mkt=en-us',
-        {
-          headers: {
-            'Ocp-Apim-Subscription-Key': '6808d519218c4eeba588ed04da827f0b'
-          }
-        }
-      );
-      const json = await response.json();
-      return json.value;
-    };
-    fetchData().then(res => setLoaded(res));
+    dispatch(setNews());
   }, []);
+  const mainClassName = `${className} main`;
   return (
-    <div className="main">
-      {!loaded ? (
+    <main className={mainClassName}>
+      {!news.length ? (
         <h2>Loading...</h2>
       ) : (
-        loaded.map((newsItem, i) => <NewsItem key={i} newsItem={newsItem} />)
+        <>
+          <News news={news} />
+          <button type="button">Load more</button>
+        </>
       )}
-    </div>
+    </main>
   );
 };
 
-export default Main;
+const mapStateToProps = state => {
+  return {
+    news: state.news
+  };
+};
+
+export default connect(mapStateToProps)(Main);
