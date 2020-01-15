@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import setNews from '../../store/thunk';
+import { setNews, addNews } from '../../store/thunk';
 import News from '../../components/News';
 
 import './index.css';
@@ -10,6 +10,9 @@ const Main = ({ className, news, dispatch }) => {
     dispatch(setNews());
   }, []);
   const mainClassName = `${className} main`;
+  const loadMoreHandler = () => {
+    dispatch(addNews());
+  };
   return (
     <main className={mainClassName}>
       {!news.length ? (
@@ -17,7 +20,9 @@ const Main = ({ className, news, dispatch }) => {
       ) : (
         <>
           <News news={news} />
-          <button type="button">Load more</button>
+          <button type="button" onClick={loadMoreHandler}>
+            Load more
+          </button>
         </>
       )}
     </main>

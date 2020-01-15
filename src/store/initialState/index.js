@@ -1,5 +1,6 @@
 const initialState = {
   activeCategory: '',
+  count: 10,
   news: []
 };
 

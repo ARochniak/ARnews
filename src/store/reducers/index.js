@@ -5,12 +5,14 @@ export default (state, action) => {
     case types.SET_NEWS: {
       return {
         activeNews: action.activeNews,
+        count: 10,
         news: action.news
       };
     }
     case types.ADD_NEWS: {
       return {
         ...state,
+        count: state.count + 10,
         news: action.news
       };
     }

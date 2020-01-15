@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import setNews from '../../store/thunk';
+import { setNews } from '../../store/thunk';
 
 import './index.css';
 
