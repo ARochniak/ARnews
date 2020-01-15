@@ -1,9 +1,28 @@
 .main {
   display: flex;
   flex-direction: column;
+  align-items: center;
   box-sizing: border-box;
   height: 100%;
   padding: 16px;
   overflow: scroll;
   overflow-x: hidden;
+}
+
+.main__button-more {
+  padding: 4px 8px;
+
+  color: #464c51;
+  font-size: 1.2em;
+
+  background-color: transparent;
+  border: 1px solid steelblue;
+  border-radius: 4px;
+}
+
+.main__button-more:hover {
+  color: white;
+
+  background-color: steelblue;
+  cursor: pointer;
 }

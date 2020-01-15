@@ -20,7 +20,11 @@ const Main = ({ className, news, dispatch }) => {
       ) : (
         <>
           <News news={news} />
-          <button type="button" onClick={loadMoreHandler}>
+          <button
+            className="main__button-more"
+            type="button"
+            onClick={loadMoreHandler}
+          >
             Load more
           </button>
         </>
