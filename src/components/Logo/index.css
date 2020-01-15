@@ -1,9 +1,10 @@
 .logo {
   margin: 0;
-  padding: 8px;
+  padding: 4px 8px;
 
-  font-size: 3em;
   color: white;
+
+  font-size: 2em;
 
   background-color: steelblue;
 }

@@ -18,7 +18,6 @@ function BurgerMenu({ aside }) {
       onClick={clickHandler}
       onKeyDown={onKeyHandler}
       type="button"
-      tabIndex={0}
     >
       <div className="burger-menu__translate">
         <span />
