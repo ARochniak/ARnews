@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { setNews, addNews } from '../../store/thunk';
 import News from '../../components/News';
@@ -6,12 +6,14 @@ import News from '../../components/News';
 import './index.css';
 
 const Main = ({ className, news, dispatch }) => {
+  const [isLoading, setLoading] = useState(false);
   useEffect(() => {
     dispatch(setNews());
   }, []);
   const mainClassName = `${className} main`;
   const loadMoreHandler = () => {
-    dispatch(addNews());
+    setLoading(true);
+    dispatch(addNews(setLoading));
   };
   return (
     <main className={mainClassName}>
@@ -20,13 +22,17 @@ const Main = ({ className, news, dispatch }) => {
       ) : (
         <>
           <News news={news} />
-          <button
-            className="main__button-more"
-            type="button"
-            onClick={loadMoreHandler}
-          >
-            Load more
-          </button>
+          {!isLoading ? (
+            <button
+              className="main__button-more"
+              type="button"
+              onClick={loadMoreHandler}
+            >
+              Load more
+            </button>
+          ) : (
+            <p className="loading">Loading...</p>
+          )}
         </>
       )}
     </main>

@@ -1,4 +1,5 @@
 {
+  "homepage": "http://arochniak.github.io/arnews",
   "name": "arnews",
   "version": "1.0.0",
   "description": "",
@@ -8,7 +9,9 @@
     "eslint": "eslint --ext .jsx --ext .js src/",
     "eslint:fix": "eslint --fix --fix-type suggestion,layout src/",
     "build": "webpack --mode production",
-    "start": "webpack-dev-server --open"
+    "start": "webpack-dev-server --open",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d public"
   },
   "author": "arochniak",
   "license": "ISC",
@@ -27,6 +30,7 @@
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.17.0",
     "eslint-plugin-react-hooks": "^1.7.0",
+    "gh-pages": "^2.2.0",
     "husky": "^4.0.6",
     "lint-staged": "^9.5.0",
     "mini-css-extract-plugin": "^0.9.0",

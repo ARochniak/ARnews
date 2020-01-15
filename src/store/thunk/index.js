@@ -19,7 +19,7 @@ export const setNews = category => {
   };
 };
 
-export const addNews = () => {
+export const addNews = setLoading => {
   return (dispatch, getState) => {
     const count = getState().count + 10;
     fetchNews(getState().activeNews, count).then(res => {
@@ -34,6 +34,7 @@ export const addNews = () => {
         count,
         news: newsArray
       });
+      setLoading(false);
     });
   };
 };
