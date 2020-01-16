@@ -127,6 +127,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  padding-right: 10px;
 }
 
 .news__content a {
@@ -183,12 +185,18 @@
   font-size: 1.2em;
 }
 
+@media (max-width: 767px) and (orientation: portrait) {
+  .main {
+    padding: 16px 10px 10px;
+  }
+}
+
 .aside {
   position: relative;
 
   width: 100%;
 
-  box-shadow: 0 0 16px rgba(70, 130, 180, 0.3);
+  box-shadow: 0 0 12px rgba(70, 130, 180, 0.3);
 
   transition: all 250ms ease-in;
 }
