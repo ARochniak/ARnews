@@ -6,12 +6,15 @@ import Aside from '../containers/Aside';
 import './index.css';
 
 const App = () => {
-  const [isAsideHide, toggleAside] = useState(false);
+  // Initial aside visible depends on screen width
+  const asideInitialState = window.innerWidth < 768;
+  const [isAsideHide, toggleAside] = useState(asideInitialState);
+  const aside = { isAsideHide, toggleAside };
 
   return (
     <div className="app">
-      <Header className="app__header" aside={{ isAsideHide, toggleAside }} />
-      <Aside className="app__aside" hide={isAsideHide} />
+      <Header className="app__header" aside={aside} />
+      <Aside className="app__aside" aside={aside} />
       <Main className="app__main" />
     </div>
   );

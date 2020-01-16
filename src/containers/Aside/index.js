@@ -4,7 +4,7 @@ import { setNews } from '../../store/thunk';
 
 import './index.css';
 
-const Aside = ({ hide, className, dispatch }) => {
+const Aside = ({ aside, className, dispatch }) => {
   const newsTypes = [
     { id: 1, category: 'World' },
     { id: 2, category: 'Technology' },
@@ -14,10 +14,12 @@ const Aside = ({ hide, className, dispatch }) => {
     { id: 6, category: 'Health' },
     { id: 7, category: 'Entertainment' }
   ];
-  const asideHide = hide ? ' aside_hide' : '';
+  const { isAsideHide, toggleAside } = aside;
+  const asideHide = isAsideHide ? 'aside_hide' : '';
   const asideClassName = `${className} aside ${asideHide}`;
   const clickHandler = category => {
     dispatch(setNews(category));
+    if (window.innerWidth < 768) toggleAside(!isAsideHide);
   };
   return (
     <aside className={asideClassName}>
@@ -26,7 +28,7 @@ const Aside = ({ hide, className, dispatch }) => {
           <li className="list__news-type" key={news.id}>
             <button
               type="button"
-              tabIndex={hide ? '-1' : ''}
+              tabIndex={isAsideHide ? '-1' : ''}
               onClick={() => {
                 clickHandler(news.category);
               }}
