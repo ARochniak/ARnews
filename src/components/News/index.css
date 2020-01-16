@@ -1,18 +1,30 @@
 .news {
   display: flex;
   justify-content: space-between;
+  box-sizing: border-box;
   width: 100%;
+  max-width: 800px;
   margin-bottom: 16px;
-  padding: 8px;
+  padding: 12px;
 
   border: 1px solid steelblue;
-  border-radius: 4px;
+  border-radius: 18px;
 
   transition: box-shadow 250ms linear;
 }
 
 .news:hover {
   box-shadow: 0 1px 6px 0 rgba(70, 130, 180, 0.28);
+}
+
+.news__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.news__content a {
+  text-decoration: none;
 }
 
 .news__content-title {
@@ -27,5 +39,5 @@
 .news__img img {
   object-fit: cover;
 
-  border-radius: 4px;
+  border-radius: 10px;
 }

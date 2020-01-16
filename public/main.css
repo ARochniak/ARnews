@@ -176,7 +176,7 @@
 
   width: 100%;
 
-  transition: all 0.2s ease-in;
+  transition: width 250ms ease-in, opacity 150ms ease-in;
 }
 
 .aside_hide {
@@ -190,12 +190,18 @@
   /* 56px - height of header */
   top: 56px;
 
+  box-sizing: border-box;
+
+  height: calc(100vh - 56px);
+
   margin: 0;
   padding-top: 8px;
   padding-left: 0;
 
   list-style: none;
   background-color: white;
+
+  box-shadow: 0 0 16px rgba(70, 130, 180, 0.3);
 }
 
 .list__news-type {
