@@ -3,7 +3,7 @@
 
   width: 100%;
 
-  box-shadow: 0 0 16px rgba(70, 130, 180, 0.3);
+  box-shadow: 0 0 12px rgba(70, 130, 180, 0.3);
 
   transition: all 250ms ease-in;
 }
