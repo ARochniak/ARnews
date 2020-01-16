@@ -3,14 +3,14 @@
 
   width: 100%;
 
-  box-shadow: 0 0 12px rgba(70, 130, 180, 0.3);
-
-  transition: all 250ms ease-in;
+  transition: width 250ms ease-in;
 }
 
 .aside_hide {
   width: 0;
+}
 
+.aside_hide .list {
   transform: translateX(-300px);
 }
 
@@ -29,6 +29,10 @@
 
   list-style: none;
   background-color: white;
+
+  box-shadow: 0 0 12px rgba(70, 130, 180, 0.3);
+
+  transition: all 250ms ease-in;
 }
 
 .list__news-type {
