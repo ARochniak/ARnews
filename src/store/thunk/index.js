@@ -1,7 +1,7 @@
 import { SET_NEWS, ADD_NEWS } from '../types';
 import fetchNews from '../../api/fetchNews';
 
-export const setNews = category => {
+export const setNews = (category = 'World') => {
   return dispatch => {
     fetchNews(category).then(res => {
       const newsArray = res.map((newsItem, i) => ({
@@ -12,7 +12,7 @@ export const setNews = category => {
       }));
       dispatch({
         type: SET_NEWS,
-        activeNews: category,
+        activeCategory: category,
         news: newsArray
       });
     });
@@ -22,7 +22,7 @@ export const setNews = category => {
 export const addNews = setLoading => {
   return (dispatch, getState) => {
     const count = getState().count + 10;
-    fetchNews(getState().activeNews, count).then(res => {
+    fetchNews(getState().activeCategory, count).then(res => {
       const newsArray = res.map((newsItem, i) => ({
         id: i,
         name: newsItem.name,

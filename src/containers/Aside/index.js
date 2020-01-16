@@ -4,7 +4,7 @@ import { setNews } from '../../store/thunk';
 
 import './index.css';
 
-const Aside = ({ aside, className, dispatch }) => {
+const Aside = ({ aside, className, dispatch, activeCategory }) => {
   const newsTypes = [
     { id: 1, category: 'World' },
     { id: 2, category: 'Technology' },
@@ -19,28 +19,39 @@ const Aside = ({ aside, className, dispatch }) => {
   const asideClassName = `${className} aside ${asideHide}`;
   const clickHandler = category => {
     dispatch(setNews(category));
-    if (window.innerWidth < 480)
-      toggleAside(!isAsideHide);
+    if (window.innerWidth < 480) toggleAside(!isAsideHide);
   };
   return (
     <aside className={asideClassName}>
       <ul className="list">
-        {newsTypes.map(news => (
-          <li className="list__news-type" key={news.id}>
-            <button
-              type="button"
-              tabIndex={isAsideHide ? '-1' : ''}
-              onClick={() => {
-                clickHandler(news.category);
-              }}
-            >
-              {news.category}
-            </button>
-          </li>
-        ))}
+        {newsTypes.map(news => {
+          const newsTypeClass =
+            news.category === activeCategory
+              ? 'list__news-type list__news-type_active'
+              : 'list__news-type';
+          return (
+            <li className={newsTypeClass} key={news.id}>
+              <button
+                type="button"
+                tabIndex={isAsideHide ? '-1' : ''}
+                onClick={() => {
+                  clickHandler(news.category);
+                }}
+              >
+                {news.category}
+              </button>
+            </li>
+          );
+        })}
       </ul>
     </aside>
   );
 };
 
-export default connect()(Aside);
+const mapStateToProps = state => {
+  return {
+    activeCategory: state.activeCategory
+  };
+};
+
+export default connect(mapStateToProps)(Aside);

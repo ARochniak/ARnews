@@ -36,7 +36,31 @@
 }
 
 .list__news-type {
+  position: relative;
+
+  height: 30px;
   padding: 8px 16px;
+  overflow: hidden;
+}
+
+.list__news-type_active {
+  background-color: #c7d9e8;
+}
+
+.list__news-type_active::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  box-sizing: border-box;
+  width: 46px;
+  height: 46px;
+
+  border: 23px solid white;
+  border-left: 23px solid #c7d9e8;
+  transform: translateX(50%);
+
+  content: "";
 }
 
 .list__news-type button {

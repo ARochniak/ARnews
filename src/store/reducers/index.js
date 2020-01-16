@@ -4,7 +4,7 @@ export default (state, action) => {
   switch (action.type) {
     case types.SET_NEWS: {
       return {
-        activeNews: action.activeNews,
+        activeCategory: action.activeCategory,
         count: 10,
         news: action.news
       };
