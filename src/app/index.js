@@ -7,7 +7,8 @@ import './index.css';
 
 const App = () => {
   // Initial aside visible depends on screen width
-  const asideInitialState = window.innerWidth < 768;
+
+  const asideInitialState = window.innerWidth < 480;
   const [isAsideHide, toggleAside] = useState(asideInitialState);
   const aside = { isAsideHide, toggleAside };
 

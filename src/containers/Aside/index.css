@@ -57,7 +57,13 @@
 
 @media (max-width: 767px) {
   .list {
-    position: fixed;
-    top: auto;
+    width: 50vw;
+
+    background-color: white;
+  }
+
+  .aside {
+    width: 0;
+    height: 100%;
   }
 }

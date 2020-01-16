@@ -19,7 +19,8 @@ const Aside = ({ aside, className, dispatch }) => {
   const asideClassName = `${className} aside ${asideHide}`;
   const clickHandler = category => {
     dispatch(setNews(category));
-    if (window.innerWidth < 768) toggleAside(!isAsideHide);
+    if (window.innerWidth < 480)
+      toggleAside(!isAsideHide);
   };
   return (
     <aside className={asideClassName}>
