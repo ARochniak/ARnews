@@ -3,13 +3,15 @@
 
   width: 100%;
 
-  transition: width 250ms ease-in, opacity 150ms ease-in;
+  box-shadow: 0 0 16px rgba(70, 130, 180, 0.3);
+
+  transition: all 250ms ease-in;
 }
 
 .aside_hide {
   width: 0;
 
-  opacity: 0;
+  transform: translateX(-300px);
 }
 
 .list {
@@ -27,8 +29,6 @@
 
   list-style: none;
   background-color: white;
-
-  box-shadow: 0 0 16px rgba(70, 130, 180, 0.3);
 }
 
 .list__news-type {
@@ -54,9 +54,6 @@
 @media (max-width: 767px) {
   .list {
     position: fixed;
-  }
-
-  .aside_hide {
-    width: 0;
+    top: auto;
   }
 }
