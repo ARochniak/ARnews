@@ -30,6 +30,7 @@
     ],
     "rules": {
         "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
+        "no-return-assign": ["error", "except-parens"],
         "no-unused-vars": ["off", { "vars": "all", "args": "after-used" }],
         "prettier/prettier": "error",
         "react/prop-types": 0,

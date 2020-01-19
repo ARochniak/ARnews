@@ -1,8 +1,8 @@
 const fetchNews = async (category = 'world', count = 10) => {
-  const queryCategory = `category=${category}`;
-  const queryCount = `count=${count}`;
+  let queryCategory = `category=${category}`;
+  let queryCount = `count=${count}`;
 
-  const response = await fetch(
+  let response = await fetch(
     'https://api.cognitive.microsoft.com/bing/v7.0/news?' +
       `mkt=en-us&sortBy=Date&${queryCategory}&${queryCount}`,
     {
@@ -11,8 +11,17 @@ const fetchNews = async (category = 'world', count = 10) => {
       }
     }
   );
-  const json = await response.json();
-  return json.value;
+  let json = await response.json();
+  if (!json.error) return json.value;
+  queryCategory =
+    category === 'world' ? `category=general` : `category=${category}`;
+  queryCount = `pageSize=${count}`;
+  response = await fetch(
+    'https://newsapi.org/v2/top-headlines?country=us&' +
+      `apiKey=fddc6392d1c449f2aefb2da74803024e&${queryCategory}&${queryCount}`
+  );
+  json = await response.json();
+  return json.articles;
 };
 
 export default fetchNews;
