@@ -2,6 +2,8 @@
   display: grid;
   grid-template-rows: auto 1fr;
   grid-template-columns: auto 1fr;
+
+  background-color: white;
 }
 
 .app__header {
@@ -18,4 +20,12 @@
   grid-row-end: 3;
   grid-column-start: 1;
   grid-column-end: 2;
+}
+
+/* switching for dark mode */
+
+.app_dark {
+  color: #dcdcdc;
+
+  background-color: black;
 }

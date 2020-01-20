@@ -1,13 +1,11 @@
 .burger-menu {
   padding: 0;
 
-  background-color: white;
+  background-color: inherit;
 
   border: none;
   border-radius: 24px;
   outline: none;
-
-  transition: background-color 0.3s;
 }
 
 .burger-menu__translate {
@@ -27,6 +25,8 @@
   background-color: #ebebeb;
 
   cursor: pointer;
+
+  transition: background-color 250ms;
 }
 
 .burger-menu:focus {
@@ -66,4 +66,18 @@
 
 .burger-menu_close span:last-child {
   transform: rotate(-45deg);
+}
+
+/* switching for dark mode */
+
+.app_dark .burger-menu:hover {
+  background-color: #333333;
+}
+
+.app_dark .burger-menu:focus {
+  background-color: #333333;
+}
+
+.app_dark .burger-menu span {
+  border-color: #dcdcdc;
 }

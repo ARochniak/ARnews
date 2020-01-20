@@ -38,3 +38,15 @@
     padding: 16px 10px 10px;
   }
 }
+
+/* switching for dark mode */
+
+.app_dark .main__button-more {
+  color: inherit;
+
+  border-color: #5b5b5b;
+}
+
+.app_dark .main__button-more:hover {
+  background-color: #333333;
+}

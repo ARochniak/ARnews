@@ -18,3 +18,13 @@
 
   background-color: white;
 }
+
+/* switching for dark mode */
+
+.app_dark .logo {
+  background-color: #333333;
+}
+
+.app_dark .logo__news {
+  color: #333333;
+}

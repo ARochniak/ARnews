@@ -4,14 +4,12 @@ import Logo from '../../components/Logo';
 
 import './index.css';
 
-// empty div for flex layout
-
-const Header = ({ aside, className }) => {
+const Header = ({ aside, className, darkModeToggle }) => {
   return (
     <header className={`${className} header`}>
       <BurgerMenu aside={aside} />
       <Logo />
-      <div />
+      <input type="checkbox" onClick={darkModeToggle} />
     </header>
   );
 };

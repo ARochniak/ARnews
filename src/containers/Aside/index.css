@@ -31,7 +31,7 @@
 
   box-shadow: 0 0 12px rgba(70, 130, 180, 0.3);
 
-  transition: all 250ms ease-in;
+  transition: transform 250ms ease-in;
 }
 
 .list__news-type {
@@ -68,14 +68,14 @@
 
   background-color: transparent;
   border: none;
-
-  transition: color 250ms linear;
 }
 
 .list__news-type button:hover {
   color: steelblue;
 
   cursor: pointer;
+
+  transition: color 250ms linear;
 }
 
 @media (max-width: 767px) {
@@ -88,5 +88,30 @@
   .aside {
     width: 0;
     height: 100%;
+  }
+}
+
+/* switching for dark mode */
+
+.app_dark .list__news-type button {
+  color: inherit;
+}
+
+.app_dark .list__news-type button:hover {
+  color: #bdbdbd;
+}
+
+.app_dark .list__news-type_active {
+  background-color: #333333;
+}
+
+.app_dark .list__news-type_active::after {
+  border-color: black;
+  border-left: 23px solid #333333;
+}
+
+@media (max-width: 767px) {
+  .app_dark .list {
+    background-color: black;
   }
 }

@@ -46,3 +46,14 @@
 
   border-radius: 10px;
 }
+
+/* switching for dark mode */
+
+.app_dark .news {
+  border-color: #5b5b5b;
+}
+
+.app_dark .news__content a {
+  color: inherit;
+  text-decoration: underline;
+}
