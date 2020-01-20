@@ -1,15 +1,10 @@
 import { SET_NEWS, ADD_NEWS } from '../types';
-import fetchNews from '../../api/fetchNews';
+import getNews from '../../utils/getNews';
+import removeDublicate from '../../utils/removeDublicate';
 
 export const setNews = (category = 'World') => {
   return dispatch => {
-    fetchNews(category).then(res => {
-      const newsArray = res.map((newsItem, i) => ({
-        id: i,
-        name: newsItem.name,
-        url: newsItem.url,
-        imageUrl: newsItem.image ? newsItem.image.thumbnail.contentUrl : null
-      }));
+    getNews(category).then(newsArray => {
       dispatch({
         type: SET_NEWS,
         activeCategory: category,
@@ -22,13 +17,10 @@ export const setNews = (category = 'World') => {
 export const addNews = setLoading => {
   return (dispatch, getState) => {
     const count = getState().count + 10;
-    fetchNews(getState().activeCategory, count).then(res => {
-      const newsArray = res.map((newsItem, i) => ({
-        id: i,
-        name: newsItem.name,
-        url: newsItem.url,
-        imageUrl: newsItem.image ? newsItem.image.thumbnail.contentUrl : null
-      }));
+    getNews(getState().activeCategory, count).then(fetchedNews => {
+      const oldNews = getState().news;
+      // Fix issue with mixing news after adding new ones
+      const newsArray = removeDublicate([...oldNews, ...fetchedNews]);
       dispatch({
         type: ADD_NEWS,
         count,

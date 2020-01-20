@@ -12,7 +12,7 @@ export default (state, action) => {
     case types.ADD_NEWS: {
       return {
         ...state,
-        count: state.count + 10,
+        count: action.count,
         news: action.news
       };
     }
