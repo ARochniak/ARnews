@@ -137,6 +137,7 @@
 
 .news__content-title {
   margin: 0;
+  padding-bottom: 5px;
 }
 
 .news__img {
@@ -145,6 +146,8 @@
 }
 
 .news__img img {
+  width: 100px;
+  height: 100px;
   object-fit: cover;
 
   border-radius: 10px;
@@ -221,7 +224,6 @@
   padding-left: 0;
 
   list-style: none;
-  background-color: white;
 
   box-shadow: 0 0 12px rgba(70, 130, 180, 0.3);
 
