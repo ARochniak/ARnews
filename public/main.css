@@ -1,13 +1,11 @@
 .burger-menu {
   padding: 0;
 
-  background-color: white;
+  background-color: inherit;
 
   border: none;
   border-radius: 24px;
   outline: none;
-
-  transition: background-color 0.3s;
 }
 
 .burger-menu__translate {
@@ -27,6 +25,8 @@
   background-color: #ebebeb;
 
   cursor: pointer;
+
+  transition: background-color 250ms;
 }
 
 .burger-menu:focus {
@@ -68,6 +68,20 @@
   transform: rotate(-45deg);
 }
 
+/* switching for dark mode */
+
+.app_dark .burger-menu:hover {
+  background-color: #333333;
+}
+
+.app_dark .burger-menu:focus {
+  background-color: #333333;
+}
+
+.app_dark .burger-menu span {
+  border-color: #dcdcdc;
+}
+
 .logo {
   margin: 0;
   padding: 4px 8px;
@@ -89,6 +103,16 @@
   background-color: white;
 }
 
+/* switching for dark mode */
+
+.app_dark .logo {
+  background-color: #333333;
+}
+
+.app_dark .logo__news {
+  color: #333333;
+}
+
 .header {
   position: sticky;
   top: 0;
@@ -98,10 +122,91 @@
   justify-content: space-between;
   padding: 4px 8px;
 
-  background-color: white;
+  background-color: inherit;
   box-shadow: 0 4px 5px 0 rgba(70, 130, 180, 0.14),
     0 1px 10px 0 rgba(70, 130, 180, 0.12),
     0 2px 4px -1px rgba(70, 130, 180, 0.2);
+}
+
+/* switching for dark mode */
+
+.app_dark header {
+  box-shadow: 0 2px 6px 2px rgba(235, 235, 235, 0.16);
+}
+
+.dark-mode {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dark-mode__switch input {
+  display: none;
+}
+
+.dark-mode__switch {
+  position: relative;
+
+  display: inline-block;
+  width: 30px;
+  height: 20px;
+}
+
+.dark-mode__slider {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  overflow: hidden;
+
+  border: 4px solid transparent;
+  border-radius: 30px;
+  box-shadow: 0 0 0 2px steelblue, 0 0 4px steelblue;
+  cursor: pointer;
+
+  transition: 0.4s;
+}
+
+.dark-mode__slider::before {
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: steelblue;
+  border-radius: 30px;
+  transform: translateX(-10px);
+
+  transition: 400ms;
+
+  content: "";
+}
+
+input:checked + .dark-mode__slider::before {
+  background-color: #9f9f9f;
+  transform: translateX(10px);
+}
+
+input:checked + .dark-mode__slider {
+  box-shadow: 0 0 0 2px #9f9f9f, 0 0 8px #9f9f9f;
+}
+
+.dark-mode__label {
+  padding-top: 4px;
+
+  color: #464c51;
+}
+
+.app_dark .dark-mode__label {
+  color: #9f9f9f;
+}
+
+@media (orientation: portrait) and (max-width: 767px) {
+  .dark-mode__label {
+    font-size: 0.7em;
+  }
 }
 
 .news {
@@ -153,6 +258,17 @@
   border-radius: 10px;
 }
 
+/* switching for dark mode */
+
+.app_dark .news {
+  border-color: #5b5b5b;
+}
+
+.app_dark .news__content a {
+  color: inherit;
+  text-decoration: underline;
+}
+
 .main {
   display: flex;
   flex-direction: column;
@@ -194,6 +310,18 @@
   }
 }
 
+/* switching for dark mode */
+
+.app_dark .main__button-more {
+  color: inherit;
+
+  border-color: #5b5b5b;
+}
+
+.app_dark .main__button-more:hover {
+  background-color: #333333;
+}
+
 .aside {
   position: relative;
 
@@ -227,7 +355,7 @@
 
   box-shadow: 0 0 12px rgba(70, 130, 180, 0.3);
 
-  transition: all 250ms ease-in;
+  transition: transform 250ms ease-in;
 }
 
 .list__news-type {
@@ -264,14 +392,14 @@
 
   background-color: transparent;
   border: none;
-
-  transition: color 250ms linear;
 }
 
 .list__news-type button:hover {
   color: steelblue;
 
   cursor: pointer;
+
+  transition: color 250ms linear;
 }
 
 @media (max-width: 767px) {
@@ -287,10 +415,37 @@
   }
 }
 
+/* switching for dark mode */
+
+.app_dark .list__news-type button {
+  color: inherit;
+}
+
+.app_dark .list__news-type button:hover {
+  color: #bdbdbd;
+}
+
+.app_dark .list__news-type_active {
+  background-color: #333333;
+}
+
+.app_dark .list__news-type_active::after {
+  border-color: black;
+  border-left: 23px solid #333333;
+}
+
+@media (max-width: 767px) {
+  .app_dark .list {
+    background-color: black;
+  }
+}
+
 .app {
   display: grid;
   grid-template-rows: auto 1fr;
   grid-template-columns: auto 1fr;
+
+  background-color: white;
 }
 
 .app__header {
@@ -307,6 +462,14 @@
   grid-row-end: 3;
   grid-column-start: 1;
   grid-column-end: 2;
+}
+
+/* switching for dark mode */
+
+.app_dark {
+  color: #dcdcdc;
+
+  background-color: black;
 }
 
 body {

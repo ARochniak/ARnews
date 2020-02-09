@@ -1,8 +1,8 @@
 import fetchNews from '../api/fetchNews';
 
-const getNews = async (category, count) => {
+const getNews = async (category, count = 10) => {
   // TODO only for development process save locally for 15 minutes
-  if (category === 'World') {
+  if (category === 'World' && count === 10) {
     const localNews = localStorage.getItem('newsArray');
     if (localNews) {
       const timeSaved = localStorage.getItem('timeSaved');
@@ -24,7 +24,7 @@ const getNews = async (category, count) => {
       ? newsItem.image.thumbnail.contentUrl
       : newsItem.urlToImage
   }));
-  if (category === 'World') {
+  if (category === 'World' && count === 10) {
     localStorage.setItem('newsArray', JSON.stringify(newsArray));
     localStorage.setItem('timeSaved', new Date().toString());
   }
