@@ -15,13 +15,14 @@ const NewsItem = ({ newsItem }) => {
       </div>
 
       <div className="news__img">
-        {newsItem.imageUrl ? (
+        {newsItem.imageUrl && (
           <img src={newsItem.imageUrl} alt={newsItem.name} />
-        ) : null}
+        )}
       </div>
     </div>
   );
 };
+
 const News = ({ news }) => {
   return news.map(newsItem => (
     <NewsItem newsItem={newsItem} key={newsItem.id} />
