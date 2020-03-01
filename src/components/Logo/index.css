@@ -1,4 +1,7 @@
 .logo {
+  position: absolute;
+  left: 50%;
+
   margin: 0;
   padding: 4px 8px;
 
@@ -7,6 +10,7 @@
   font-size: 2em;
 
   background-color: steelblue;
+  transform: translate(-50%);
 }
 
 .logo span {
