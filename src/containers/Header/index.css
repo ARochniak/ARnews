@@ -13,6 +13,17 @@
     0 2px 4px -1px rgba(70, 130, 180, 0.2);
 }
 
+.right-bar {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 767px) {
+  .right-bar {
+    flex-direction: column-reverse;
+  }
+}
+
 /* switching for dark mode */
 
 .app_dark header {
