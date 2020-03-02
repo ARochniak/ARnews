@@ -10,7 +10,6 @@ const DarkMode = ({ darkModeToggle }) => {
         <input type="checkbox" onClick={darkModeToggle} />
         <span className="dark-mode__slider" />
       </label>
-      <div className="dark-mode__label">dark mode</div>
     </div>
   );
 };

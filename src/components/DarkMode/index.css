@@ -2,6 +2,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-left: 25px;
+
+  background-image: url("night.png");
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
 }
 
 .dark-mode__switch input {
@@ -57,14 +62,8 @@ input:checked + .dark-mode__slider {
   box-shadow: 0 0 0 2px #9f9f9f, 0 0 8px #9f9f9f;
 }
 
-.dark-mode__label {
-  padding-top: 4px;
-
-  color: #464c51;
-}
-
-.app_dark .dark-mode__label {
-  color: #9f9f9f;
+.app_dark .dark-mode {
+  background-image: url("night_grey.png");
 }
 
 @media (orientation: portrait) and (max-width: 767px) {
