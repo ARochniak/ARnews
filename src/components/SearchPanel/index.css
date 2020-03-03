@@ -7,11 +7,16 @@
 }
 
 .search-panel__submit {
+  height: 20px;
   padding: 0;
 
   background-color: transparent;
   border: none;
   cursor: pointer;
+}
+
+.search-panel__submit:focus {
+  outline: 1px solid steelblue;
 }
 
 .search-panel__submit img {
@@ -50,10 +55,6 @@
   .search-panel {
     padding-right: 0;
   }
-}
-
-.app_dark .search-panel__submit {
-  filter: hue-rotate(90deg);
 }
 
 .app_dark .search-panel__submit img {

@@ -22,6 +22,12 @@ const SearchPanel = () => {
     setSearchFieldClass(' search-field_hide');
     return true;
   };
+  const focusHandler = () => {
+    setSearchFieldClass(' search-field_show');
+  };
+  const blurHandler = () => {
+    setSearchFieldClass(' search-field_hide');
+  }
   useEffect(() => {
     window.addEventListener('click', clickHandler);
 
@@ -44,6 +50,8 @@ const SearchPanel = () => {
         className={`search-panel__field${searchFieldClass}`}
         type="search"
         placeholder="search"
+        onFocus={focusHandler}
+        onBlur={blurHandler}
       />
     </form>
   );
