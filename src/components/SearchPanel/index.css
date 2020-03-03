@@ -55,3 +55,7 @@
 .app_dark .search-panel__submit {
   filter: hue-rotate(90deg);
 }
+
+.app_dark .search-panel__submit img {
+  filter: invert();
+}
