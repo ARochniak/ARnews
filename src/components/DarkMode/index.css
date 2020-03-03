@@ -63,7 +63,7 @@ input:checked + .dark-mode__slider {
 }
 
 .app_dark .dark-mode {
-  background-image: url("night_grey.png");
+  background-image: url("brightness.png");
 }
 
 @media (orientation: portrait) and (max-width: 767px) {
