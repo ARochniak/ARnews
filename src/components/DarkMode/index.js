@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './index.css';
-
+// TODO add tabindex
 const DarkMode = ({ darkModeToggle }) => {
   return (
     <div className="dark-mode">
