@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './index.css';
+import searchPng from './search.png';
+// TODO add close icon
 
 const SearchPanel = () => {
   const [searchFieldClass, setSearchFieldClass] = useState(
@@ -15,6 +17,18 @@ const SearchPanel = () => {
   const submitHandler = e => {
     e.preventDefault();
   };
+  const clickHandler = e => {
+    if (e.target.closest('.search-panel')) return false;
+    setSearchFieldClass(' search-field_hide');
+    return true;
+  };
+  useEffect(() => {
+    window.addEventListener('click', clickHandler);
+
+    return () => {
+      window.removeEventListener('click', clickHandler);
+    };
+  }, []);
 
   return (
     <form className="search-panel" onSubmit={submitHandler}>
@@ -23,7 +37,9 @@ const SearchPanel = () => {
         className="search-panel__submit"
         type="button"
         onClick={toggleSearchField}
-      />
+      >
+        <img src={searchPng} alt="search" />
+      </button>
       <input
         className={`search-panel__field${searchFieldClass}`}
         type="search"
