@@ -3,10 +3,10 @@
 
   height: 20px;
 
-  padding-right: 20px;
+  padding-right: 40px;
 }
 
-.search-panel__submit {
+.search-panel__field-toggle {
   height: 20px;
   padding: 0;
 
@@ -15,11 +15,11 @@
   cursor: pointer;
 }
 
-.search-panel__submit:focus {
+.search-panel__field-toggle:focus {
   outline: 1px solid steelblue;
 }
 
-.search-panel__submit img {
+.search-panel__field-toggle img {
   width: 20px;
 }
 
@@ -29,6 +29,8 @@
 
   margin-top: 10px;
   padding: 6px 10px;
+
+  font-size: 1.1em;
 
   border: 1px solid #4682b43b;
   border-radius: 10px;
@@ -57,6 +59,6 @@
   }
 }
 
-.app_dark .search-panel__submit img {
+.app_dark .search-panel__field-toggle img {
   filter: invert();
 }

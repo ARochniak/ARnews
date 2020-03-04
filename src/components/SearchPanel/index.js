@@ -42,7 +42,7 @@ const SearchPanel = () => {
     <form className="search-panel" onSubmit={submitHandler}>
       {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
       <button
-        className="search-panel__submit"
+        className="search-panel__field-toggle"
         type="button"
         onClick={toggleSearchField}
       >
@@ -50,11 +50,11 @@ const SearchPanel = () => {
       </button>
       <input
         className={`search-panel__field${searchFieldClass}`}
+        ref={searchField}
         type="search"
         placeholder="search"
         tabIndex="-1"
         onKeyDown={tabHandler}
-        ref={searchField}
       />
     </form>
   );
