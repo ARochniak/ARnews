@@ -83,6 +83,9 @@
 }
 
 .logo {
+  position: absolute;
+  left: 50%;
+
   margin: 0;
   padding: 4px 8px;
 
@@ -91,6 +94,7 @@
   font-size: 2em;
 
   background-color: steelblue;
+  transform: translate(-50%);
 }
 
 .logo span {
@@ -128,6 +132,11 @@
     0 2px 4px -1px rgba(70, 130, 180, 0.2);
 }
 
+.right-bar {
+  display: flex;
+  align-items: center;
+}
+
 /* switching for dark mode */
 
 .app_dark header {
@@ -138,6 +147,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-left: 25px;
+
+  background-image: url(../images/night.png);
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
 }
 
 .dark-mode__switch input {
@@ -193,20 +207,85 @@ input:checked + .dark-mode__slider {
   box-shadow: 0 0 0 2px #9f9f9f, 0 0 8px #9f9f9f;
 }
 
-.dark-mode__label {
-  padding-top: 4px;
-
-  color: #464c51;
-}
-
-.app_dark .dark-mode__label {
-  color: #9f9f9f;
+.app_dark .dark-mode {
+  background-image: url(../images/brightness.png);
 }
 
 @media (orientation: portrait) and (max-width: 767px) {
   .dark-mode__label {
     font-size: 0.7em;
   }
+}
+
+.search-panel {
+  position: relative;
+
+  height: 20px;
+
+  padding-right: 40px;
+}
+
+.search-panel__field-toggle {
+  height: 20px;
+  padding: 0;
+
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.search-panel__field-toggle:focus {
+  outline: 1px solid steelblue;
+}
+
+.search-panel__field-toggle img {
+  width: 20px;
+}
+
+.search-panel__field {
+  position: absolute;
+  left: 0;
+
+  margin-top: 10px;
+  padding: 6px 10px;
+
+  font-size: 1.1em;
+
+  border: 1px solid #4682b43b;
+  border-radius: 10px;
+  box-shadow: 0 4px 5px 0 rgba(70, 130, 180, 0.14),
+    0 1px 10px 0 rgba(70, 130, 180, 0.12),
+    0 2px 4px -1px rgba(70, 130, 180, 0.2);
+
+  transition: transform 400ms, border 250ms;
+}
+
+.search-panel__field:focus {
+  outline: 1px solid steelblue;
+}
+
+.search-field_hide {
+  transform: translate(-50%, -100px);
+}
+
+.search-field_show {
+  top: 100%;
+
+  transform: translate(-50%, 0);
+}
+
+@media (orientation: portrait) {
+  .search-panel {
+    padding-right: 10px;
+  }
+
+  .search-panel__field {
+    width: 180px;
+  }
+}
+
+.app_dark .search-panel__field-toggle img {
+  filter: invert();
 }
 
 .news {
@@ -335,7 +414,7 @@ input:checked + .dark-mode__slider {
 }
 
 .aside_hide .list {
-  transform: translateX(-300px);
+  transform: translateX(-500px);
 }
 
 .list {
