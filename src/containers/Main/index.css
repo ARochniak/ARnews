@@ -33,7 +33,7 @@
   font-size: 1.2em;
 }
 
-@media (max-width: 767px) and (orientation: portrait) {
+@media (max-width: 767px), (orientation: portrait) {
   .main {
     padding: 16px 10px 10px;
   }
