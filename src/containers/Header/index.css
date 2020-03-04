@@ -18,12 +18,6 @@
   align-items: center;
 }
 
-@media (max-width: 767px) {
-  .right-bar {
-    flex-direction: column-reverse;
-  }
-}
-
 /* switching for dark mode */
 
 .app_dark header {

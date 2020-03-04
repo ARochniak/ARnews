@@ -34,7 +34,9 @@
 
   border: 1px solid #4682b43b;
   border-radius: 10px;
-  box-shadow: 0 4px 5px 0 rgba(70, 130, 180, 0.14), 0 1px 10px 0 rgba(70, 130, 180, 0.12), 0 2px 4px -1px rgba(70, 130, 180, 0.2);
+  box-shadow: 0 4px 5px 0 rgba(70, 130, 180, 0.14),
+    0 1px 10px 0 rgba(70, 130, 180, 0.12),
+    0 2px 4px -1px rgba(70, 130, 180, 0.2);
 
   transition: transform 400ms, border 250ms;
 }
@@ -53,9 +55,13 @@
   transform: translate(-50%, 0);
 }
 
-@media (max-width: 767px) {
+@media (orientation: portrait) {
   .search-panel {
-    padding-right: 0;
+    padding-right: 10px;
+  }
+
+  .search-panel__field {
+    width: 180px;
   }
 }
 
