@@ -1,11 +1,14 @@
-import fetchNews from '../api/fetchNews';
+import fetchNewsProxy from './fetchNewsProxy';
 import newsAdapter from './newsAdapter';
 
-const getNews = async (category, count = 10) => {
-  const response = await fetchNews(category.toLowerCase(), count);
+const getNews = async ({ category = 'World', count = 10 }) => {
+  const response = await fetchNewsProxy({
+    category: category.toLowerCase(),
+    count
+  });
   return newsAdapter(response);
 };
-const getNewsDevelopment = async (category, count = 10) => {
+const getNewsDevelopment = async ({ category, count }) => {
   // TODO only for development process save locally for 15 minutes
   if (category === 'World' && count === 10) {
     const localNews = localStorage.getItem('newsArray');
@@ -19,7 +22,7 @@ const getNewsDevelopment = async (category, count = 10) => {
       }
     }
   }
-  const newsArray = await getNews(category, count);
+  const newsArray = await getNews({ category, count });
   if (category === 'World' && count === 10) {
     localStorage.setItem('newsArray', JSON.stringify(newsArray));
     localStorage.setItem('timeSaved', new Date().toString());
