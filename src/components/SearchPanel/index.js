@@ -1,9 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { connect } from 'react-redux';
+import { findNews } from '../../store/thunk';
+
 import './index.css';
 import searchPng from './search.png';
 // TODO add close icon
 
-const SearchPanel = () => {
+const SearchPanel = ({ dispatch }) => {
   const [searchFieldClass, setSearchFieldClass] = useState(
     ' search-field_hide'
   );
@@ -24,6 +27,7 @@ const SearchPanel = () => {
   };
   const submitHandler = e => {
     e.preventDefault();
+    dispatch(findNews(searchField.current.value));
   };
   const clickHandler = e => {
     if (e.target.closest('.search-panel')) return false;
@@ -60,4 +64,4 @@ const SearchPanel = () => {
   );
 };
 
-export default SearchPanel;
+export default connect()(SearchPanel);

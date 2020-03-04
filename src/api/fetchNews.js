@@ -13,10 +13,7 @@ const fetchAzureNews = async query => {
 };
 
 const fetchNewsApi = async query => {
-  const response = await fetch(
-    'https://newsapi.org/v2/top-headlines?country=us&' +
-      `apiKey=fddc6392d1c449f2aefb2da74803024e&${query}`
-  );
+  const response = await fetch(query);
   const json = await response.json();
   return json.articles;
 };

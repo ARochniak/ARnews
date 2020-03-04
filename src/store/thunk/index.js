@@ -14,6 +14,18 @@ export const setNews = category => {
   };
 };
 
+export const findNews = q => {
+  return dispatch => {
+    getNews({ q }).then(newsArray => {
+      dispatch({
+        type: SET_NEWS,
+        activeCategory: 'world',
+        news: newsArray
+      });
+    });
+  };
+};
+
 export const addNews = setLoading => {
   return (dispatch, getState) => {
     const count = getState().count + 10;
