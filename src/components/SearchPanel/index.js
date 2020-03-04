@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './index.css';
 import searchPng from './search.png';
 // TODO add close icon
@@ -7,12 +7,14 @@ const SearchPanel = () => {
   const [searchFieldClass, setSearchFieldClass] = useState(
     ' search-field_hide'
   );
+  const searchField = useRef(null);
   const toggleSearchField = () => {
     const newClass =
       searchFieldClass === ' search-field_hide'
         ? ' search-field_show'
         : ' search-field_hide';
     setSearchFieldClass(newClass);
+    if (newClass === ' search-field_show') searchField.current.focus();
   };
   const submitHandler = e => {
     e.preventDefault();
@@ -22,12 +24,6 @@ const SearchPanel = () => {
     setSearchFieldClass(' search-field_hide');
     return true;
   };
-  const focusHandler = () => {
-    setSearchFieldClass(' search-field_show');
-  };
-  const blurHandler = () => {
-    setSearchFieldClass(' search-field_hide');
-  }
   useEffect(() => {
     window.addEventListener('click', clickHandler);
 
@@ -50,8 +46,8 @@ const SearchPanel = () => {
         className={`search-panel__field${searchFieldClass}`}
         type="search"
         placeholder="search"
-        onFocus={focusHandler}
-        onBlur={blurHandler}
+        tabIndex="-1"
+        ref={searchField}
       />
     </form>
   );
