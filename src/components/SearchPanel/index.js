@@ -19,6 +19,9 @@ const SearchPanel = () => {
         searchField.current.focus();
       }, 250);
   };
+  const tabHandler = e => {
+    if (e.key === 'Tab') setSearchFieldClass(' search-field_hide');
+  };
   const submitHandler = e => {
     e.preventDefault();
   };
@@ -50,6 +53,7 @@ const SearchPanel = () => {
         type="search"
         placeholder="search"
         tabIndex="-1"
+        onKeyDown={tabHandler}
         ref={searchField}
       />
     </form>
