@@ -14,7 +14,10 @@ const SearchPanel = () => {
         ? ' search-field_show'
         : ' search-field_hide';
     setSearchFieldClass(newClass);
-    if (newClass === ' search-field_show') searchField.current.focus();
+    if (newClass === ' search-field_show')
+      setTimeout(() => {
+        searchField.current.focus();
+      }, 250);
   };
   const submitHandler = e => {
     e.preventDefault();
