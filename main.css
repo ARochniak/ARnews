@@ -274,7 +274,7 @@ input:checked + .dark-mode__slider {
   transform: translate(-50%, 0);
 }
 
-@media (orientation: portrait) {
+@media (orientation: portrait), (max-width: 768px) {
   .search-panel {
     padding-right: 10px;
   }
@@ -383,7 +383,7 @@ input:checked + .dark-mode__slider {
   font-size: 1.2em;
 }
 
-@media (max-width: 767px) and (orientation: portrait) {
+@media (max-width: 767px), (orientation: portrait) {
   .main {
     padding: 16px 10px 10px;
   }
