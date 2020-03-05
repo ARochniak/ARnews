@@ -149,7 +149,7 @@
   align-items: center;
   padding-left: 25px;
 
-  background-image: url(../images/night.png);
+  background-image: url(images/night.png);
   background-repeat: no-repeat;
   background-size: 20px 20px;
 }
@@ -208,7 +208,7 @@ input:checked + .dark-mode__slider {
 }
 
 .app_dark .dark-mode {
-  background-image: url(../images/brightness.png);
+  background-image: url(images/brightness.png);
 }
 
 @media (orientation: portrait) and (max-width: 767px) {
