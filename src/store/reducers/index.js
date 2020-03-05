@@ -6,7 +6,16 @@ export default (state, action) => {
       return {
         activeCategory: action.activeCategory,
         count: 10,
-        news: action.news
+        news: action.news,
+        q: null
+      };
+    }
+    case types.FIND_NEWS: {
+      return {
+        ...state,
+        count: 10,
+        news: action.news,
+        q: action.q
       };
     }
     case types.ADD_NEWS: {

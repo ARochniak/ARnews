@@ -1,7 +1,8 @@
 const initialState = {
   activeCategory: 'World',
   count: 10,
-  news: []
+  news: [],
+  q: null
 };
 
 export default initialState;
