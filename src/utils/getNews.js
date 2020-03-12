@@ -1,7 +1,7 @@
 import fetchNewsProxy from './fetchNewsProxy';
 import newsAdapter from './newsAdapter';
 
-const getNews = async ({ category = 'World', count = 10, q }) => {
+const getNews = async ({ category, count = 10, q }) => {
   const response = await fetchNewsProxy({
     category: category.toLowerCase(),
     count,
@@ -9,7 +9,7 @@ const getNews = async ({ category = 'World', count = 10, q }) => {
   });
   return newsAdapter(response);
 };
-const getNewsDevelopment = async ({ category, count, q }) => {
+const getNewsDevelopment = async ({ category, count = 10, q }) => {
   // TODO only for development process save locally for 15 minutes
   if (category === 'World' && count === 10) {
     const localNews = localStorage.getItem('newsArray');
@@ -31,4 +31,7 @@ const getNewsDevelopment = async ({ category, count, q }) => {
   return newsArray;
 };
 
-export default getNewsDevelopment;
+const exportedFunction =
+  process.env.NODE_ENV === 'development' ? getNewsDevelopment : getNews;
+
+export default exportedFunction;
