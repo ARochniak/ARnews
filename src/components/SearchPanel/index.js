@@ -28,6 +28,7 @@ const SearchPanel = ({ dispatch }) => {
   const submitHandler = e => {
     e.preventDefault();
     dispatch(findNews(searchField.current.value));
+    setSearchFieldClass(' search-field_hide');
   };
   const clickHandler = e => {
     if (e.target.closest('.search-panel')) return false;
