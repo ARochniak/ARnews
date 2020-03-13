@@ -4,6 +4,7 @@
   box-sizing: border-box;
   width: 100%;
   max-width: 800px;
+  min-height: 150px;
   margin-bottom: 16px;
 
   border: 1px solid #a0c8e9;
@@ -48,9 +49,20 @@
 }
 
 @media (max-width: 767px) and (orientation: portrait) {
-  .news__content h2,
-  .news__content a {
+  .news {
+    min-height: 100px;
+  }
+
+  .news__content {
+    padding: 8px 5px 8px 8px;
+  }
+
+  .news__content h2 {
     font-size: 0.9em;
+  }
+
+  .news__content a {
+    font-size: 0.8em;
   }
 
   .news__img {
