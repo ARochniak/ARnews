@@ -4,9 +4,10 @@
   align-items: center;
   padding-left: 25px;
 
-  background-image: url("night.png");
+  background-image: url("night_toggle.png");
   background-repeat: no-repeat;
-  background-size: 20px 20px;
+  background-position: 0 100%;
+  background-size: 20px 40px;
 }
 
 .dark-mode__switch input {
@@ -63,7 +64,8 @@ input:checked + .dark-mode__slider {
 }
 
 .app_dark .dark-mode {
-  background-image: url("brightness.png");
+  background-image: url("night_toggle.png");
+  background-position: 0 0;
 }
 
 @media (orientation: portrait) and (max-width: 767px) {
