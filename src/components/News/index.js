@@ -13,12 +13,9 @@ const NewsItem = ({ newsItem }) => {
           link to news
         </a>
       </div>
-
-      <div className="news__img">
-        {newsItem.imageUrl && (
-          <img src={newsItem.imageUrl} alt={newsItem.name} />
-        )}
-      </div>
+      {newsItem.imageUrl && (
+        <img className="news__img" src={newsItem.imageUrl} alt="news" />
+      )}
     </div>
   );
 };
