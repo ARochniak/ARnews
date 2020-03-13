@@ -2,7 +2,7 @@ import { SET_NEWS, ADD_NEWS, FIND_NEWS } from '../types';
 import getNews from '../../utils/getNews';
 import removeDublicate from '../../utils/removeDublicate';
 
-export const setNews = category => {
+export const setNews = (category = 'World') => {
   return dispatch => {
     getNews({ category }).then(newsArray => {
       dispatch({
