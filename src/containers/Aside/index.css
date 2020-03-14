@@ -91,6 +91,12 @@
   }
 }
 
+@media (max-height: 480px) {
+  .list {
+    overflow: scroll;
+  }
+}
+
 /* switching for dark mode */
 
 .app_dark .list__news-type button {
