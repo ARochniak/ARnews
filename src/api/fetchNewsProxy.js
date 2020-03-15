@@ -1,4 +1,4 @@
-import fetchNews from '../api/fetchNews';
+import fetchNews from './fetchNews';
 
 const getNewsApiQuery = type => {
   return (
