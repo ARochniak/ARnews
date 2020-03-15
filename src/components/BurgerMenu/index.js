@@ -13,18 +13,13 @@ function BurgerMenu({ aside }) {
   const className = `burger-menu${isAsideHide ? '' : ' burger-menu_close'}`;
 
   return (
+    // eslint-disable-next-line jsx-a11y/control-has-associated-label
     <button
       className={className}
       onClick={clickHandler}
       onKeyDown={onKeyHandler}
       type="button"
-    >
-      <div className="burger-menu__translate">
-        <span />
-        <span />
-        <span />
-      </div>
-    </button>
+    />
   );
 }
 
