@@ -4,7 +4,7 @@
   align-items: center;
   padding-left: 25px;
 
-  background-image: url("night_toggle.png");
+  background-image: url("night_toggle.svg");
   background-repeat: no-repeat;
   background-position: 0 100%;
   background-size: 20px 40px;
@@ -64,7 +64,7 @@ input:checked + .dark-mode__slider {
 }
 
 .app_dark .dark-mode {
-  background-image: url("night_toggle.png");
+  background-image: url("night_toggle.svg");
   background-position: 0 0;
 }
 
