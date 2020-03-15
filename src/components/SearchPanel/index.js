@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { findNews } from '../../store/thunk';
 
 import './index.css';
-import searchPng from './search.png';
+import searchSvg from './search.svg';
 // TODO add close icon
 
 const SearchPanel = ({ dispatch }) => {
@@ -51,7 +51,7 @@ const SearchPanel = ({ dispatch }) => {
         type="button"
         onClick={toggleSearchField}
       >
-        <img src={searchPng} alt="search" />
+        <img src={searchSvg} alt="search" />
       </button>
       <input
         className={`search-panel__field${searchFieldClass}`}
