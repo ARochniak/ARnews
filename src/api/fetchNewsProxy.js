@@ -7,18 +7,25 @@ const getNewsApiQuery = type => {
   );
 };
 
+const getAzureQuery = q => {
+  const endpoint = q ? '/search' : '';
+  return `https://api.cognitive.microsoft.com/bing/v7.0/news${endpoint}?`;
+};
+
 const optionsToQuery = ({ category, count, q }) => {
+  let azureQuery = getAzureQuery(true);
   let newsApiQuery = getNewsApiQuery('everything?');
   if (q) {
     return {
-      azure: `q=${q}&count=${count}`,
+      azure: `${azureQuery}mkt=en-us&sortBy=Date&q=${q}&count=${count}`,
       newsApi: `${newsApiQuery}q=${q}&pageSize=${count}`
     };
   }
+  azureQuery = getAzureQuery(false);
   newsApiQuery = getNewsApiQuery('top-headlines?country=us&');
   const newsApiCategory = category === 'world' ? `general` : category;
   return {
-    azure: `category=${category}&count=${count}`,
+    azure: `${azureQuery}category=${category}&count=${count}`,
     newsApi: `${newsApiQuery}category=${newsApiCategory}&pageSize=${count}`
   };
 };

@@ -1,13 +1,9 @@
 const fetchAzureNews = async query => {
-  const response = await fetch(
-    'https://api.cognitive.microsoft.com/bing/v7.0/news?' +
-      `mkt=en-us&sortBy=Date&${query}`,
-    {
-      headers: {
-        'Ocp-Apim-Subscription-Key': '471a148ab5e5441cb0cce6c70accaff0'
-      }
+  const response = await fetch(query, {
+    headers: {
+      'Ocp-Apim-Subscription-Key': '471a148ab5e5441cb0cce6c70accaff0'
     }
-  );
+  });
   const json = await response.json();
   return json.error ? false : json.value;
 };
