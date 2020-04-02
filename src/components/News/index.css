@@ -7,7 +7,8 @@
   min-height: 150px;
   margin-bottom: 16px;
 
-  border: 1px solid #a0c8e9;
+  background: linear-gradient(to bottom, rgba(70, 130, 180, 0.19), rgba(70, 130, 180, 0.13));
+
   border-radius: 18px;
 
   transition: box-shadow 150ms linear, transform 150ms linear;

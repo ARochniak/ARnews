@@ -2,8 +2,6 @@ import React from 'react';
 
 import './index.css';
 
-// TODO сделать как в 4пда
-
 const NewsItem = ({ newsItem }) => {
   return (
     <div className="news">
