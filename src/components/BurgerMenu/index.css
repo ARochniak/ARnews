@@ -1,12 +1,10 @@
-:root {
+.burger-menu {
   --burger-color: #5f6368;
   --burger-width: 28px;
   --burger-height: 20px;
   --burger-height-line: 2px;
   --burger-padding: 8px;
-}
 
-.burger-menu {
   position: relative;
 
   display: block;
@@ -44,7 +42,7 @@
 
   transition: all 0.3s;
 
-  content: '';
+  content: "";
 }
 
 .burger-menu::after {
