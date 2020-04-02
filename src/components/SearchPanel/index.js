@@ -4,7 +4,6 @@ import { findNews } from '../../store/thunk';
 
 import './index.css';
 import searchSvg from './search.svg';
-// TODO add close icon
 
 const SearchPanel = ({ dispatch }) => {
   const [searchFieldClass, setSearchFieldClass] = useState(
