@@ -2,15 +2,11 @@ import fetchNewsProxy from './fetchNewsProxy';
 import newsAdapter from './newsAdapter';
 
 const getNews = async ({ category, count = 10, q }) => {
-  const response = await fetchNewsProxy({
-    category: category.toLowerCase(),
-    count,
-    q
-  });
+  const response = await fetchNewsProxy({ category, count, q });
   return newsAdapter(response);
 };
 const getNewsDevelopment = async ({ category, count = 10, q }) => {
-  // TODO only for development process save locally for 15 minutes
+  // only for development process save locally for 15 minutes
   if (category === 'World' && count === 10) {
     const localNews = localStorage.getItem('newsArray');
     if (localNews) {

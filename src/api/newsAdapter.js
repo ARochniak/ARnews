@@ -1,6 +1,8 @@
+import uuid from 'react-uuid';
+
 const newsAdapter = newsArray => {
-  return newsArray.map((newsItem, i) => ({
-    id: i,
+  return newsArray.map(newsItem => ({
+    id: uuid(),
     name: newsItem.name || newsItem.title,
     url: newsItem.url,
     // sometimes bing news api item without image field

@@ -4,7 +4,7 @@ const fetchAzureNews = async query => {
       `mkt=en-us&sortBy=Date&${query}`,
     {
       headers: {
-        'Ocp-Apim-Subscription-Key': '6808d519218c4eeba588ed04da827f0b'
+        'Ocp-Apim-Subscription-Key': '471a148ab5e5441cb0cce6c70accaff0'
       }
     }
   );

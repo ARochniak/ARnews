@@ -8,7 +8,7 @@ const removeDuplicate = arr => {
 };
 
 const getOrderedNews = (oldNews, fetchedNews) => {
-  return removeDuplicate([...oldNews, ...fetchedNews])
-}
+  return removeDuplicate([...oldNews, ...fetchedNews]);
+};
 
 export default getOrderedNews;
