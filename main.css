@@ -1,85 +1,62 @@
 .burger-menu {
-  padding: 0;
+  --burger-color: #5f6368;
+  --burger-width: 28px;
+  --burger-height: 20px;
+  --burger-height-line: 2px;
+  --burger-padding: 8px;
 
-  background-color: inherit;
+  position: relative;
 
+  display: block;
+  box-sizing: content-box;
+  width: var(--burger-width);
+  height: var(--burger-height);
+  padding: calc(var(--burger-padding) * 1.5) var(--burger-padding)
+    calc(var(--burger-padding) * 1.5 + var(--burger-height-line));
+
+  background-color: transparent;
   border: none;
-  border-radius: 24px;
-  outline: none;
-}
-
-.burger-menu__translate {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  box-sizing: border-box;
-  width: 48px;
-  height: 48px;
-  padding: 15px 0;
-
-  transition: transform 0.2s linear;
-}
-
-.burger-menu:hover {
-  background-color: #ebebeb;
-
+  border-radius: 50%;
   cursor: pointer;
-
-  transition: background-color 250ms;
 }
 
 .burger-menu:focus {
   background-color: #ebebeb;
+  outline: none;
 }
 
-.burger-menu span {
-  position: relative;
-
-  width: 24px;
-
-  border-bottom: 2px solid #5f6368;
-  border-radius: 1px;
-
-  transition: all 0.2s linear;
+.burger-menu:hover {
+  background-color: #ebebeb;
 }
 
-.burger-menu span:first-child {
-  transform-origin: left top;
+.burger-menu::before,
+.burger-menu::after {
+  position: absolute;
+  top: calc(var(--burger-height) / 2 + 5);
+  left: var(--burger-padding);
+
+  width: var(--burger-width);
+  height: var(--burger-height-line);
+
+  background-color: var(--burger-color);
+
+  transition: all 0.3s;
+
+  content: "";
 }
 
-.burger-menu span:last-child {
-  transform-origin: left bottom;
+.burger-menu::after {
+  box-shadow: 0 calc(var(--burger-height) / 2) 0 0 var(--burger-color),
+    0 calc(var(--burger-height) / -2) 0 0 var(--burger-color);
 }
 
-.burger-menu_close .burger-menu__translate {
-  transform: translateX(4px);
-}
-
-.burger-menu_close span:first-child {
+.burger-menu_close::after {
+  box-shadow: none;
   transform: rotate(45deg);
 }
 
-.burger-menu_close span:nth-child(2) {
-  opacity: 0;
-}
-
-.burger-menu_close span:last-child {
+.burger-menu_close::before {
   transform: rotate(-45deg);
-}
-
-/* switching for dark mode */
-
-.app_dark .burger-menu:hover {
-  background-color: #333333;
-}
-
-.app_dark .burger-menu:focus {
-  background-color: #333333;
-}
-
-.app_dark .burger-menu span {
-  border-color: #dcdcdc;
 }
 
 .logo {
@@ -149,7 +126,7 @@
   align-items: center;
   padding-left: 25px;
 
-  background-image: url(images/night_toggle.png);
+  background-image: url(images/night_toggle.svg);
   background-repeat: no-repeat;
   background-position: 0 100%;
   background-size: 20px 40px;
@@ -209,7 +186,7 @@ input:checked + .dark-mode__slider {
 }
 
 .app_dark .dark-mode {
-  background-image: url(images/night_toggle.png);
+  background-image: url(images/night_toggle.svg);
   background-position: 0 0;
 }
 
@@ -299,7 +276,8 @@ input:checked + .dark-mode__slider {
   min-height: 150px;
   margin-bottom: 16px;
 
-  border: 1px solid #a0c8e9;
+  background: linear-gradient(to bottom, rgba(70, 130, 180, 0.19), rgba(70, 130, 180, 0.13));
+
   border-radius: 18px;
 
   transition: box-shadow 150ms linear, transform 150ms linear;
@@ -313,13 +291,19 @@ input:checked + .dark-mode__slider {
 .news__content {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   justify-content: space-between;
 
   padding: 12px 10px 12px 12px;
 }
 
 .news__content a {
+  color: #00378a;
   text-decoration: none;
+}
+
+.news__content a:hover {
+  border-bottom: 1px solid steelblue;
 }
 
 .news__content-title {
@@ -433,22 +417,22 @@ input:checked + .dark-mode__slider {
   position: relative;
 
   width: 100%;
-
-  transition: width 250ms ease-in;
 }
 
 .aside_hide {
   width: 0;
+
+  transition-delay: 250ms;
 }
 
 .aside_hide .list {
-  transform: translateX(-500px);
+  transform: translateX(-100%);
 }
 
 .list {
   position: sticky;
   /* 56px - height of header */
-  top: 56px;
+  top: 54px;
 
   box-sizing: border-box;
 
@@ -457,12 +441,13 @@ input:checked + .dark-mode__slider {
   margin: 0;
   padding-top: 8px;
   padding-left: 0;
+  overflow: hidden;
 
   list-style: none;
 
   box-shadow: 0 0 12px rgba(70, 130, 180, 0.3);
 
-  transition: transform 250ms ease-in;
+  transition: transform 250ms linear;
 }
 
 .list__news-type {
