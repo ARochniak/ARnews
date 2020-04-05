@@ -4,7 +4,7 @@ import { setNews, addNews } from '../../store/thunk';
 import News from '../../components/News';
 
 import './index.css';
-
+// TODO add loading process
 const Main = ({ className, news, dispatch }) => {
   const [isLoading, setLoading] = useState(false);
   useEffect(() => {
