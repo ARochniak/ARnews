@@ -12,7 +12,7 @@ export default (state, action) => {
     }
     case types.FIND_NEWS: {
       return {
-        ...state,
+        activeCategory: null,
         count: 10,
         news: action.news,
         q: action.q
