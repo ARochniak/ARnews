@@ -1,3 +1,5 @@
+import makeHttpRequest from './makeHttpRequest';
+
 const fetchAzureNews = async query => {
   const response = await fetch(query, {
     headers: {
@@ -14,10 +16,11 @@ const fetchNewsApi = async query => {
   return json.articles;
 };
 
-const fetchNews = async query => {
-  const azureRes = await fetchAzureNews(query.azure);
+const fetchNews = async options => {
+  const request = makeHttpRequest(options);
+  const azureRes = await fetchAzureNews(request.azure);
   if (azureRes) return azureRes;
-  const newsApiRes = await fetchNewsApi(query.newsApi);
+  const newsApiRes = await fetchNewsApi(request.newsApi);
   return newsApiRes;
 };
 
