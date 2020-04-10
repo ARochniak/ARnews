@@ -7,7 +7,7 @@ const getNewsApiQuery = type => {
 
 const getAzureQuery = q => {
   const endpoint = q ? '/search' : '';
-  return `https://api.cognitive.microsoft.com/bing/v7.0/news${endpoint}?&mkt=en-us&`;
+  return `https://api.cognitive.microsoft.com/bing/v7.0/news${endpoint}?mkt=en-us&`;
 };
 
 const makeHttpRequest = ({ category, count, q }) => {
