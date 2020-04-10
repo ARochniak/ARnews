@@ -5,13 +5,13 @@ describe('Function makeHttpRequest', () => {
     const input = { category: 'world', count: 10, q: null };
     const output = {
       azure:
-        'https://api.cognitive.microsoft.com/bing/v7.0/news?category=world&count=10',
+        'https://api.cognitive.microsoft.com/bing/v7.0/news?mkt=en-us&category=world&count=10',
       newsApi:
         'https://newsapi.org/v2/top-headlines?country=us&' +
         'apiKey=fddc6392d1c449f2aefb2da74803024e&' +
         'category=general&pageSize=10'
     };
-    expect(makeHttpRequest(input)).toEqual(expect.objectContaining(output));
+    expect(makeHttpRequest(input)).toEqual(output);
   });
 
   test('should return http requests for search query (nba)', () => {
@@ -24,6 +24,6 @@ describe('Function makeHttpRequest', () => {
         'apiKey=fddc6392d1c449f2aefb2da74803024e&' +
         'q=nba&pageSize=20'
     };
-    expect(makeHttpRequest(input)).toEqual(expect.objectContaining(output));
+    expect(makeHttpRequest(input)).toEqual(output);
   });
 });
