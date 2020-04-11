@@ -1,3 +1,7 @@
+.news-container {
+  padding-left: 0;
+}
+
 .news {
   display: flex;
   justify-content: space-between;

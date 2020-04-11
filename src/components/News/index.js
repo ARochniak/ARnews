@@ -2,26 +2,30 @@ import React from 'react';
 
 import './index.css';
 
-const NewsItem = ({ newsItem }) => {
+export const NewsItem = ({ item }) => {
   return (
-    <div className="news">
+    <li className="news">
       <div className="news__content">
-        <h2 className="news__content-title">{newsItem.name}</h2>
-        <a href={newsItem.url} target="_blank" rel="noreferrer noopener">
+        <h2 className="news__content-title">{item.name}</h2>
+        <a href={item.url} target="_blank" rel="noreferrer noopener">
           link to news
         </a>
       </div>
-      {newsItem.imageUrl && (
-        <img className="news__img" src={newsItem.imageUrl} alt="news" />
+      {item.imageUrl && (
+        <img className="news__img" src={item.imageUrl} alt="news" />
       )}
-    </div>
+    </li>
   );
 };
 
 const News = ({ news }) => {
-  return news.map(newsItem => (
-    <NewsItem newsItem={newsItem} key={newsItem.id} />
-  ));
+  return (
+    <ul className="news-container">
+      {news.map(item => (
+        <NewsItem item={item} key={item.id} />
+      ))}
+    </ul>
+  );
 };
 
 export default News;
