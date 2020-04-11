@@ -5,7 +5,7 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --watchAll",
     "eslint": "eslint --ext .jsx --ext .js src/",
     "eslint:fix": "eslint --fix --fix-type suggestion,layout src/",
     "build": "webpack --mode production",
