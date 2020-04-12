@@ -5,7 +5,7 @@ import { findNews } from '../../store/thunk';
 import './index.css';
 import searchSvg from './search.svg';
 
-const SearchPanel = ({ dispatch }) => {
+export const SearchPanel = ({ dispatch }) => {
   const [searchFieldClass, setSearchFieldClass] = useState(
     ' search-field_hide'
   );
