@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { NewsItem } from './index';
+import News, { NewsItem } from './index';
 
 describe('NewsItem', () => {
   let item;
@@ -25,10 +25,18 @@ describe('NewsItem', () => {
   });
 });
 
-describe('NewsItem', () => {
-  const item = { name: 'Hot news', url: 'http://', imageUrl: 'http://' };
-  const wrapper = shallow(<NewsItem item={item} />);
-  test('should render a title from props', () => {
-    expect(wrapper.find('h2').text()).toBe(item.name);
+describe('News', () => {
+  const news = [
+    { name: 'Hot news1', url: 'http://', imageUrl: 'http://', id: 1 },
+    { name: 'Hot news2', url: 'http://', imageUrl: 'http://', id: 2 }
+  ];
+  const wrapper = shallow(<News news={news} />);
+  test('should render a list of NewsItem with news elements as prop', () => {
+    expect(wrapper.find('NewsItem')).toHaveLength(2);
+  });
+
+  test('should have first NewsItem with correct item prop', () => {
+    const newsItem = wrapper.find('NewsItem').at(0);
+    expect(newsItem.props().item).toEqual(news[0]);
   });
 });
