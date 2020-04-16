@@ -1,6 +1,6 @@
 import { SET_NEWS, ADD_NEWS, FIND_NEWS } from '../types';
 import loadNews from '../../api/getNews';
-import orderNews from '../../api/orderNews';
+import orderNews from '../../api/helpers/orderNews';
 
 export const setNews = (category = 'World') => {
   return dispatch => {

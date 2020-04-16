@@ -1,5 +1,5 @@
-import fetchNews from './fetchNews';
-import newsAdapter from './newsAdapter';
+import fetchNews from './helpers/fetchNews';
+import newsAdapter from './helpers/newsAdapter';
 
 const getNews = async ({ category, count = 10, q }) => {
   const response = await fetchNews({ category, count, q });
