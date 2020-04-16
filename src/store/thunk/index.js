@@ -1,10 +1,10 @@
 import { SET_NEWS, ADD_NEWS, FIND_NEWS } from '../types';
-import loadNews from '../../api/getNews';
+import getNews from '../../api/getNews';
 import orderNews from '../../api/helpers/orderNews';
 
 export const setNews = (category = 'World') => {
   return dispatch => {
-    loadNews({ category }).then(newsArray => {
+    getNews({ category }).then(newsArray => {
       dispatch({
         type: SET_NEWS,
         activeCategory: category,
@@ -16,7 +16,7 @@ export const setNews = (category = 'World') => {
 
 export const findNews = q => {
   return dispatch => {
-    loadNews({ q }).then(newsArray => {
+    getNews({ q }).then(newsArray => {
       dispatch({
         type: FIND_NEWS,
         news: newsArray,
@@ -35,7 +35,7 @@ export const addNews = setLoading => {
       q: getState().q,
       count
     };
-    loadNews(requestOptions).then(fetchedNews => {
+    getNews(requestOptions).then(fetchedNews => {
       const oldNews = getState().news;
       // Fix issue with mixing news after adding new ones
       const newsArray = orderNews(oldNews, fetchedNews);

@@ -37,7 +37,6 @@ const getNewsDevelopment = async ({ category, count = 10, q }) => {
   return newsArray;
 };
 
-const loadNews =
-  process.env.NODE_ENV === 'development' ? getNewsDevelopment : getNews;
-
-export default loadNews;
+export default process.env.NODE_ENV === 'development'
+  ? getNewsDevelopment
+  : getNews;
