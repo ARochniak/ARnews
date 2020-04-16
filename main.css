@@ -267,6 +267,10 @@ input:checked + .dark-mode__slider {
   filter: invert();
 }
 
+.news-container {
+  padding-left: 0;
+}
+
 .news {
   display: flex;
   justify-content: space-between;
@@ -432,7 +436,8 @@ input:checked + .dark-mode__slider {
 .list {
   position: sticky;
   /* 56px - height of header */
-  top: 54px;
+  top: 56px;
+  z-index: 1;
 
   box-sizing: border-box;
 
@@ -547,7 +552,7 @@ input:checked + .dark-mode__slider {
 }
 
 .app__header {
-  z-index: 1;
+  z-index: 2;
 
   grid-row-start: 1;
   grid-row-end: 2;
