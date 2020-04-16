@@ -17,7 +17,7 @@
 .list {
   position: sticky;
   /* 56px - height of header */
-  top: 54px;
+  top: 56px;
   z-index: 1;
 
   box-sizing: border-box;
