@@ -1,4 +1,4 @@
-import orderNews from '../helpers/orderNews';
+import orderNews from '../orderNews';
 
 describe('Function orderNews', () => {
   test('should concat two arrays in right order', () => {

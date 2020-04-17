@@ -1,4 +1,4 @@
-import makeHttpRequest from '../helpers/makeHttpRequest';
+import makeHttpRequest from '../makeHttpRequest';
 
 describe('Function makeHttpRequest', () => {
   test('should return http requests for world category', () => {

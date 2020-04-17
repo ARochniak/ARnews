@@ -1,4 +1,4 @@
-import newsAdapter from '../helpers/newsAdapter';
+import newsAdapter from '../newsAdapter';
 
 describe('Function newsAdapter', () => {
   test('should return correct array when receive newsAPI array', () => {
