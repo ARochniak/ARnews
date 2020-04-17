@@ -6,7 +6,7 @@
   padding-right: 40px;
 }
 
-.search-panel__field-toggle {
+.search-panel__icon {
   height: 20px;
   padding: 0;
 
@@ -15,16 +15,17 @@
   cursor: pointer;
 }
 
-.search-panel__field-toggle:focus {
+.search-panel__icon:focus {
   outline: 1px solid steelblue;
 }
 
-.search-panel__field-toggle img {
+.search-panel__icon img {
   width: 20px;
 }
 
 .search-panel__field {
   position: absolute;
+  top: 100%;
   left: 0;
 
   margin-top: 10px;
@@ -38,6 +39,8 @@
     0 1px 10px 0 rgba(70, 130, 180, 0.12),
     0 2px 4px -1px rgba(70, 130, 180, 0.2);
 
+  transform: translate(-50%, 0);
+
   transition: transform 400ms, border 250ms;
 }
 
@@ -45,14 +48,10 @@
   outline: 1px solid steelblue;
 }
 
-.search-field_hide {
+.field_hide {
+  top: 0;
+
   transform: translate(-50%, -100px);
-}
-
-.search-field_show {
-  top: 100%;
-
-  transform: translate(-50%, 0);
 }
 
 @media (orientation: portrait), (max-width: 768px) {

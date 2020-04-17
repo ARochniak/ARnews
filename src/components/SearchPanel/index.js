@@ -6,32 +6,27 @@ import './index.css';
 import searchSvg from './search.svg';
 
 export const SearchPanel = ({ dispatch }) => {
-  const [searchFieldClass, setSearchFieldClass] = useState(
-    ' search-field_hide'
-  );
+  const [searchFieldClass, setSearchFieldClass] = useState(' field_hide');
   const searchField = useRef(null);
   const toggleSearchField = () => {
-    const newClass =
-      searchFieldClass === ' search-field_hide'
-        ? ' search-field_show'
-        : ' search-field_hide';
+    const newClass = searchFieldClass === ' field_hide' ? '' : ' field_hide';
     setSearchFieldClass(newClass);
-    if (newClass === ' search-field_show')
+    if (newClass === '')
       setTimeout(() => {
         searchField.current.focus();
       }, 250);
   };
   const tabHandler = e => {
-    if (e.key === 'Tab') setSearchFieldClass(' search-field_hide');
+    if (e.key === 'Tab') setSearchFieldClass(' field_hide');
   };
   const submitHandler = e => {
     e.preventDefault();
     dispatch(findNews(searchField.current.value));
-    setSearchFieldClass(' search-field_hide');
+    setSearchFieldClass(' field_hide');
   };
   const clickHandler = e => {
     if (e.target.closest('.search-panel')) return false;
-    setSearchFieldClass(' search-field_hide');
+    setSearchFieldClass(' field_hide');
     return true;
   };
   useEffect(() => {
@@ -46,7 +41,7 @@ export const SearchPanel = ({ dispatch }) => {
     <form className="search-panel" onSubmit={submitHandler}>
       {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
       <button
-        className="search-panel__field-toggle"
+        className="search-panel__icon"
         type="button"
         onClick={toggleSearchField}
       >
