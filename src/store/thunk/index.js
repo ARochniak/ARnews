@@ -1,9 +1,14 @@
-import { SET_NEWS, ADD_NEWS, FIND_NEWS } from '../types';
+import { SET_NEWS, ADD_NEWS, FIND_NEWS, SET_LOADING } from '../types';
 import getNews from '../../api/getNews';
 import orderNews from '../../api/helpers/orderNews';
 
+const setLoading = dispatch => {
+  dispatch({ type: SET_LOADING });
+};
+
 export const setNews = (category = 'World') => {
   return dispatch => {
+    setLoading(dispatch);
     getNews({ category }).then(newsArray => {
       dispatch({
         type: SET_NEWS,
@@ -13,9 +18,9 @@ export const setNews = (category = 'World') => {
     });
   };
 };
-
 export const findNews = q => {
   return dispatch => {
+    setLoading(dispatch);
     getNews({ q }).then(newsArray => {
       dispatch({
         type: FIND_NEWS,
@@ -25,10 +30,11 @@ export const findNews = q => {
     });
   };
 };
+// setLoading uses for manage view while news are loading
 
-export const addNews = setLoading => {
-  // setLoading uses for manage view while news are loading
+export const addNews = () => {
   return (dispatch, getState) => {
+    setLoading(dispatch);
     const count = getState().count + 10;
     const requestOptions = {
       category: getState().activeCategory,
@@ -44,7 +50,6 @@ export const addNews = setLoading => {
         count,
         news: newsArray
       });
-      setLoading(false);
     });
   };
 };

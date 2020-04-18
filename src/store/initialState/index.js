@@ -2,7 +2,8 @@ const initialState = {
   activeCategory: 'World',
   count: 10,
   news: [],
-  q: null
+  q: null,
+  isLoading: true
 };
 
 export default initialState;
