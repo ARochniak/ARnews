@@ -390,7 +390,7 @@ input:checked + .dark-mode__slider {
   cursor: pointer;
 }
 
-.loading {
+.main__loading {
   margin: 0;
   padding: 6px;
 
@@ -434,8 +434,8 @@ input:checked + .dark-mode__slider {
 
 .list {
   position: sticky;
-  /* 56px - height of header */
-  top: 56px;
+  /* 54px - height of header */
+  top: 54px;
   z-index: 1;
 
   box-sizing: border-box;
@@ -526,6 +526,10 @@ input:checked + .dark-mode__slider {
   .app_dark .list {
     background-color: black;
   }
+}
+
+html {
+  overflow-y: scroll;
 }
 
 .app {
