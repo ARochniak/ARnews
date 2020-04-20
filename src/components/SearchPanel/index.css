@@ -40,8 +40,9 @@
     0 2px 4px -1px rgba(70, 130, 180, 0.2);
 
   transform: translate(-50%, 0);
+  visibility: visible;
 
-  transition: transform 400ms, border 250ms;
+  transition: transform 400ms, visibility 400ms, border 250ms;
 }
 
 .search-panel__field:focus {
@@ -52,6 +53,7 @@
   top: 0;
 
   transform: translate(-50%, -100px);
+  visibility: hidden;
 }
 
 @media (orientation: portrait), (max-width: 768px) {
