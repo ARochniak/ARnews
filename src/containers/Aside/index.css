@@ -48,6 +48,7 @@
   background: linear-gradient(45deg, #b6d7f3, #e8f5ff);
 
   clip-path: polygon(0 0, calc(100% - 23px) 0, 100% 23px, calc(100% - 23px) 46px, 0 46px);
+  -webkit-clip-path: polygon(0 0, calc(100% - 23px) 0, 100% 23px, calc(100% - 23px) 46px, 0 46px);
 }
 
 .list__news-type button {
@@ -82,6 +83,12 @@
 @media (max-height: 480px) {
   .list {
     overflow: scroll;
+  }
+}
+
+@media (max-width: 480px) {
+  .list__news-type {
+    padding: 8px;
   }
 }
 
