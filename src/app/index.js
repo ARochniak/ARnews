@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Header from '../containers/Header';
 import Main from '../containers/Main';
-import Aside from '../containers/Aside';
+import SideBar from '../containers/SideBar';
 
 import './index.css';
 
@@ -13,18 +13,18 @@ const App = () => {
     setDarkMode(!isDarkMode);
   };
   const darkClass = isDarkMode ? ' app_dark' : '';
-  const asideInitialState = window.innerWidth < 480;
-  const [isAsideHide, toggleAside] = useState(asideInitialState);
-  const aside = { isAsideHide, toggleAside };
+  const sideBarInitialState = window.innerWidth < 480;
+  const [isSideBarHide, toggleSideBar] = useState(sideBarInitialState);
+  const sidebar = { isSideBarHide, toggleSideBar };
 
   return (
     <div className={`app${darkClass}`}>
       <Header
         className="app__header"
-        aside={aside}
+        sidebar={sidebar}
         darkModeToggle={darkModeToggle}
       />
-      <Aside className="app__aside" aside={aside} />
+      <SideBar className="app__sidebar" sidebar={sidebar} />
       <Main className="app__main" />
     </div>
   );

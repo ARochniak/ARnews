@@ -6,10 +6,10 @@ import './index.css';
 import DarkMode from '../../components/DarkMode';
 import SearchPanel from '../../components/SearchPanel';
 
-const Header = ({ aside, className, darkModeToggle }) => {
+const Header = ({ sidebar, className, darkModeToggle }) => {
   return (
     <header className={`${className} header`}>
-      <BurgerMenu aside={aside} />
+      <BurgerMenu sidebar={sidebar} />
       <Logo />
       <div className="right-bar">
         <SearchPanel />

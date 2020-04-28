@@ -1,16 +1,16 @@
-.aside {
+.sidebar {
   position: relative;
 
   width: 100%;
 }
 
-.aside_hide {
+.sidebar_hide {
   width: 0;
 
   transition-delay: 250ms;
 }
 
-.aside_hide .list {
+.sidebar_hide .list {
   transform: translateX(-100%);
 }
 
@@ -74,7 +74,7 @@
     background-color: white;
   }
 
-  .aside {
+  .sidebar {
     width: 0;
     height: 100%;
   }

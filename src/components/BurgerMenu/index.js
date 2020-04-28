@@ -2,20 +2,22 @@ import React from 'react';
 
 import './index.css';
 
-function BurgerMenu({ aside }) {
-  const { isAsideHide, toggleAside } = aside;
+function BurgerMenu({ sidebar }) {
+  const { isSideBarHide, toggleSideBar } = sidebar;
+  const classes = ['burger-menu'];
+  if (!isSideBarHide) classes.push('burger-menu_close');
+
   const clickHandler = () => {
-    toggleAside(!isAsideHide);
+    toggleSideBar(!isSideBarHide);
   };
   const onKeyHandler = e => {
-    if (e.keyCode === 'Enter') toggleAside(!isAsideHide);
+    if (e.keyCode === 'Enter') toggleSideBar(!isSideBarHide);
   };
-  const className = `burger-menu${isAsideHide ? '' : ' burger-menu_close'}`;
 
   return (
     // eslint-disable-next-line jsx-a11y/control-has-associated-label
     <button
-      className={className}
+      className={classes.join(' ')}
       onClick={clickHandler}
       onKeyDown={onKeyHandler}
       type="button"

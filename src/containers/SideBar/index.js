@@ -5,13 +5,13 @@ import newsTypes from './newsTypes';
 
 import './index.css';
 
-const Aside = ({ aside, className, dispatch, activeCategory }) => {
-  const { isAsideHide, toggleAside } = aside;
-  const asideHide = isAsideHide ? 'aside_hide' : '';
-  const asideClassName = `${className} aside ${asideHide}`;
+const SideBar = ({ sidebar, className, dispatch, activeCategory }) => {
+  const { isSideBarHide, toggleSideBar } = sidebar;
+  const asideHide = isSideBarHide ? 'sidebar_hide' : '';
+  const sideBarClassName = `${className} sidebar ${asideHide}`;
   const clickHandler = category => {
     dispatch(setNews(category));
-    if (window.innerWidth < 480) toggleAside(!isAsideHide);
+    if (window.innerWidth < 480) toggleSideBar(!isSideBarHide);
   };
   const newsTypesLis = newsTypes.map(news => {
     const newsTypeClass =
@@ -22,7 +22,7 @@ const Aside = ({ aside, className, dispatch, activeCategory }) => {
       <li className={newsTypeClass} key={news.id}>
         <button
           type="button"
-          tabIndex={isAsideHide ? '-1' : ''}
+          tabIndex={isSideBarHide ? '-1' : ''}
           onClick={() => {
             clickHandler(news.category);
           }}
@@ -33,9 +33,9 @@ const Aside = ({ aside, className, dispatch, activeCategory }) => {
     );
   });
   return (
-    <aside className={asideClassName}>
+    <div className={sideBarClassName}>
       <ul className="list">{newsTypesLis}</ul>
-    </aside>
+    </div>
   );
 };
 
@@ -45,4 +45,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(Aside);
+export default connect(mapStateToProps)(SideBar);
